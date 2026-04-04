@@ -17,6 +17,9 @@ public class Pet {
     @Column(name = "name", nullable = false)
     private String name;
 
+    @Column(name = "type")
+    private String type;
+
     @Column(name = "breed")
     private String breed;
 
@@ -30,6 +33,14 @@ public class Pet {
 
     public String getName() {
         return name;
+    }
+
+    public void setType(String type){
+        this.type = type;
+    }
+
+    public String getType(){
+        return type;
     }
 
     public void setName(String name) {
