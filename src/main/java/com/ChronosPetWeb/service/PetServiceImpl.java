@@ -10,7 +10,7 @@ import com.ChronosPetWeb.repository.PetRepository;
 
 @Service
 public class PetServiceImpl implements PetService{
-    
+
     @Autowired
     private PetRepository petRepository;
 
@@ -22,5 +22,15 @@ public class PetServiceImpl implements PetService{
     @Override
     public void savePet(Pet pet){
         petRepository.save(pet);
+    }
+
+    @Override
+    public void deletePetById(Long id){
+        petRepository.deleteById(id);
+    }
+
+    @Override
+    public Pet getPetById(Long id){
+        return petRepository.findById(id).orElse(null);
     }
 }

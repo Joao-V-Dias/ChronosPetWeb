@@ -7,6 +7,6 @@ import com.ChronosPetWeb.model.Pet;
 public interface PetService {
     List<Pet> getAllPets();
     void savePet(Pet pet);
-    // Pet getPetById(long id);
-    // void deletePetById();
+    void deletePetById(Long id);
+    Pet getPetById(Long id);
 }
