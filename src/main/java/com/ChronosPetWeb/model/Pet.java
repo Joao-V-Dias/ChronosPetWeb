@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "pets")
@@ -14,12 +15,15 @@ public class Pet {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Nome é obrigatorio")
     @Column(name = "name", nullable = false)
     private String name;
 
+    @NotBlank(message = "Tipo é obrigatorio")
     @Column(name = "type")
     private String type;
 
+    @NotBlank(message = "Raca é obrigatorio")
     @Column(name = "breed")
     private String breed;
 
