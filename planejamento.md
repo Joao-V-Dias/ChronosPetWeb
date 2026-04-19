@@ -276,7 +276,7 @@ Exibir:
 
 # ✅ 9. Checklist Final
 
-- [ ] Criar entidades (Pet, Owner, Vaccine, VaccinationRecord)
+- [x] Criar entidades (Pet, Owner, Vaccine, VaccinationRecord)
 - [ ] Definir relacionamentos (JPA)
 - [ ] Adicionar validações
 - [ ] Criar DTOs

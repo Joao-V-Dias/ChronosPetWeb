@@ -21,11 +21,9 @@ public class Pet {
     @Column(name = "species")
     private String species;
 
-    @NotBlank(message = "Raca é obrigatorio")
     @Column(name = "breed")
     private String breed;
 
-    @NotBlank(message = "Data de Aniversario é obrigatorio")
     @Column(name = "birth_date")
     private LocalDate birthDate;
 
