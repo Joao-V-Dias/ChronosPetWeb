@@ -19,11 +19,14 @@ class VaccinationRecord {
     @JoinColumn(name = "vaccine_id")
     private Vaccine vaccine;
 
-
+    @Column(name = "application_date")
     private LocalDate applicationDate;
+
+    @Column(name = "next_dose_date")
     private LocalDate nextDoseDate;
 
-    private Boolean applied;
+    @Column(name = "status")
+    private Boolean status;
 
     public Vaccine getVaccine() {
         return vaccine;
@@ -65,11 +68,11 @@ class VaccinationRecord {
         this.nextDoseDate = nextDoseDate;
     }
 
-    public Boolean getApplied() {
-        return applied;
+    public Boolean getStatus() {
+        return status;
     }
 
-    public void setApplied(Boolean applied) {
-        this.applied = applied;
+    public void setStatus(Boolean status) {
+        this.status = status;
     }
 }

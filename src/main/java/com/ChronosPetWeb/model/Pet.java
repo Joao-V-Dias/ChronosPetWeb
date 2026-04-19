@@ -1,12 +1,10 @@
 package com.ChronosPetWeb.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+
+import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 @Table(name = "pets")
@@ -19,13 +17,29 @@ public class Pet {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @NotBlank(message = "Tipo é obrigatorio")
-    @Column(name = "type")
-    private String type;
+    @NotBlank(message = "Especie é obrigatorio")
+    @Column(name = "species")
+    private String species;
 
     @NotBlank(message = "Raca é obrigatorio")
     @Column(name = "breed")
     private String breed;
+
+    @NotBlank(message = "Data de Aniversario é obrigatorio")
+    @Column(name = "birth_date")
+    private LocalDate birthDate;
+
+    @ManyToOne
+    @JoinColumn(name = "owner_id")
+    private Owner owner;
+
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Owner owner) {
+        this.owner = owner;
+    }
 
     public Long getId() {
         return id;
@@ -39,16 +53,16 @@ public class Pet {
         return name;
     }
 
-    public void setType(String type){
-        this.type = type;
-    }
-
-    public String getType(){
-        return type;
-    }
-
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getSpecies() {
+        return species;
+    }
+
+    public void setSpecies(String species) {
+        this.species = species;
     }
 
     public String getBreed() {
@@ -57,5 +71,13 @@ public class Pet {
 
     public void setBreed(String breed) {
         this.breed = breed;
+    }
+
+    public LocalDate getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
     }
 }
