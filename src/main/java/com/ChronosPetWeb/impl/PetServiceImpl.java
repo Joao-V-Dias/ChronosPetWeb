@@ -1,7 +1,8 @@
-package com.ChronosPetWeb.service;
+package com.ChronosPetWeb.impl;
 
 import java.util.List;
 
+import com.ChronosPetWeb.service.PetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +10,7 @@ import com.ChronosPetWeb.model.Pet;
 import com.ChronosPetWeb.repository.PetRepository;
 
 @Service
-public class PetServiceImpl implements PetService{
+public class PetServiceImpl implements PetService {
 
     @Autowired
     private PetRepository petRepository;
