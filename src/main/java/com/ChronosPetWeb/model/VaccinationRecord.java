@@ -1,9 +1,11 @@
 package com.ChronosPetWeb.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.time.LocalDate;
 
+@Data
 @Entity
 @Table(name = "vaccination_record")
 class VaccinationRecord {
@@ -27,52 +29,4 @@ class VaccinationRecord {
 
     @Column(name = "status")
     private Boolean status;
-
-    public Vaccine getVaccine() {
-        return vaccine;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Pet getPet() {
-        return pet;
-    }
-
-    public void setPet(Pet pet) {
-        this.pet = pet;
-    }
-
-    public void setVaccine(Vaccine vaccine) {
-        this.vaccine = vaccine;
-    }
-
-    public LocalDate getApplicationDate() {
-        return applicationDate;
-    }
-
-    public void setApplicationDate(LocalDate applicationDate) {
-        this.applicationDate = applicationDate;
-    }
-
-    public LocalDate getNextDoseDate() {
-        return nextDoseDate;
-    }
-
-    public void setNextDoseDate(LocalDate nextDoseDate) {
-        this.nextDoseDate = nextDoseDate;
-    }
-
-    public Boolean getStatus() {
-        return status;
-    }
-
-    public void setStatus(Boolean status) {
-        this.status = status;
-    }
 }
